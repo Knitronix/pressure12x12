@@ -16,7 +16,7 @@
  
  
  */
-int Orient = 0; //nel mio 3
+int Orient = 0; 
 
 // Number of columns and rows in the grid
 int cols = 12;
@@ -24,8 +24,8 @@ int rows = 12;
 
 
 // Window dimension
-int ScrDimX = 700; //nel mio 800
-int ScrDimY = 700; //nel mio 800
+int ScrDimX = 700; 
+int ScrDimY = 700; 
 
 int PixDimX;
 int PixDimY;
@@ -71,7 +71,6 @@ void setup() {
   } else {
     // size(ScrDimY, ScrDimX);
     surface.setSize(ScrDimY, ScrDimX);
-    // era così: ma non aveva senso l'if!
     //surface.setSize(ScrDimX, ScrDimY);
   }
   PixDimX=ScrDimX/cols;
@@ -190,19 +189,7 @@ void draw() {
               break;
             }
 
-            // Disegna il rettangolo
             rect(x, y, PixDimX, PixDimY);
-
-            //// Imposta il colore del testo
-            //fill(0); // Testo nero (o scegli un colore che contrasti con il rettangolo)
-            //textAlign(CENTER, CENTER); // Allinea il testo al centro del rettangolo
-
-            //// Calcola la posizione del testo al centro del rettangolo
-            //float textX = x + PixDimX / 2;
-            //float textY = y + PixDimY / 2;
-
-            //// Disegna il valore come testo
-            //text(valore, textX, textY);
           }
         }
       }

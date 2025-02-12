@@ -70,7 +70,6 @@ void setup() {
   } else {
     // size(ScrDimY, ScrDimX);
     surface.setSize(ScrDimY, ScrDimX);
-    // era così: ma non aveva senso l'if!
     //surface.setSize(ScrDimX, ScrDimY);
   }
   PixDimX=ScrDimX/cols;
@@ -97,7 +96,7 @@ void setup() {
 
 void draw() {
   int inByte=0;
-  int valore;
+  int pressureValue;
 
   exitloop = false;
   while ((myPort.available() > 0) && !exitloop) {
@@ -137,17 +136,17 @@ void draw() {
           stringArray[i] = str(myArray[i]);
         }
         // Stampa l'array di valori ricevuti in una sola riga
-         //println("Valori ricevuti: " + join(stringArray, " "));
+         //println("All values: " + join(stringArray, " "));
      
         for (int i = 0; i < vRows; i++) {
           for (int j = 0; j < vCols; j++) {
-            valore=myArray[(i*vCols)+j];
-            if (valore<210) {
-              stroke(valore, 300, 255);
-              fill(valore, 300, 255);
+            pressureValue=myArray[(i*vCols)+j];
+            if (pressureValue<210) {
+              stroke(pressureValue, 300, 255);
+              fill(pressureValue, 300, 255);
             } else {
-              stroke(valore, 300+((210-valore)*8), 255);
-              fill(valore, 300+((210-valore)*8), 255);
+              stroke(pressureValue, 300+((210-pressureValue)*8), 255);
+              fill(pressureValue, 300+((210-pressureValue)*8), 255);
             }
 
             float x = 0;
@@ -189,19 +188,18 @@ void draw() {
               break;
             }
 
-            // Disegna il rettangolo
+            // Draw rect
             rect(x, y, PixDimX, PixDimY);
 
-            // Imposta il colore del testo
-            fill(0); // Testo nero (o scegli un colore che contrasti con il rettangolo)
-            textAlign(CENTER, CENTER); // Allinea il testo al centro del rettangolo
+            // Text color options
+            fill(0); // black
+            textAlign(CENTER, CENTER); // align to center
 
-            // Calcola la posizione del testo al centro del rettangolo
+            // text positioning
             float textX = x + PixDimX / 2;
             float textY = y + PixDimY / 2;
 
-            // Disegna il valore come testo
-            text(valore, textX, textY);
+            text(pressureValue, textX, textY); 
           }
         }
       }
