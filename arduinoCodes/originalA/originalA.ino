@@ -16,11 +16,11 @@ const int Rows = 12;   //Define rows number
 
 //declaration of the INPUT pins we will use; i is the position within the array;
 //int Pin[]= {A10, A8, A6, A4, A2, A0, A1, A3, A5, A7, A9, A11};
-int Pin[] = { A14, A12, A10, A8, A6, A4, A5, A7, A9, A11, A13, A15 };  //configurazione per cavi con riduzione da 16 a 12 e connettori inseriti 'in linea' con il cavi. XELA Robotics
+int Pin[] = { A14, A12, A10, A8, A6, A4, A5, A7, A9, A11, A13, A15 };  //configurazione per cavi con riduzione da 16 a 12 e connettori inseriti 'in linea' con il cavi. 
 
 //declaration of the OUTPUT pins we will use; i is the position within the array;
 //int dPin[] = {33, 31, 29, 27, 25, 23, 22, 24, 26, 28, 30, 32};  // Pins 22-37 used to supply current to sensor
-int dPin[] = { 36, 34, 32, 30, 28, 26, 27, 29, 31, 33, 35, 37 };  // //configurazione per cavi con riduzione da 16 a 12 e connettori inseriti 'in linea' con il cavi. XELA Robotics
+int dPin[] = { 36, 34, 32, 30, 28, 26, 27, 29, 31, 33, 35, 37 };  // configurazione per cavi con riduzione da 16 a 12 e connettori inseriti 'in linea' con il cavi. 
 
 // Define various ADC prescaler
 const unsigned char PS_16 = (1 << ADPS2);
